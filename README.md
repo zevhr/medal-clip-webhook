@@ -1,2 +1,19 @@
-# medal-clip-webhook
-An extra webhook for Medal Clip Sharing - In case your server owner can't use Medal!
+# An extra Medal webhook for Server Owners
+This webhook will allow users to submit their clips to a server if the server owner adds the webhook to their server.
+This can be especially useful to server owners who just want a quick way to allow their users to share clips.
+# A disclaimer..
+This is just a project I've made out of boredom. (MedalBot)[https://medal.tv/medalbot] is obviously the better choice, however this webhook will be for server owners who just want a way for users to submit their clips, and nothing else.
+--
+This script is not made to discourage your use of the MedalBot system.
+
+# Updating
+Eventually, I'd like to integrate this with Medal's API in order to possibly autoupload new clips, however that's a bit far away!
+
+# Now, how do I use this??? (V1)
+A Simple Explanation: You can head on over to (heroku link), input your clip link & server owner-provided webhook link, and it'll be good to go!
+
+A more detailed explanation (for server owners): You'll need a Discord server (obviously), and a Discord channel you'd like all clips to go to.
+Head into the settings of that channel and click on the **Integrations** tab. Then, click on **Webhooks** and **New Webhook**. You can name this whatever you'd like (it will not be the final name). All you'll need is the webhook link. 
+Copy that, head over to (heroku link?) and paste it into the Webhook Link box, and you're good to go!
+
+**Eventually** - I want this to have the ability to store Guild IDs in a database with their webhook links. However, atm, this is only a page that can trigger a webhook response. 
