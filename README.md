@@ -1,5 +1,5 @@
 # An extra Medal webhook for Server Owners
-This webhook will allow users to submit their clips to a server if the server owner adds the webhook to their server.
+This webhook (developed in PHP) will allow users to submit their clips to a server if the server owner adds the webhook to their server.
 This can be especially useful to server owners who just want a quick way to allow their users to share clips.
 # A disclaimer..
 This is just a project I've made out of boredom. [MedalBot](https://medal.tv/medalbot) is obviously the better choice, however this webhook will be for server owners who just want a way for users to submit their clips, and nothing else.
@@ -16,4 +16,4 @@ A more detailed explanation (for server owners): You'll need a Discord server (o
 Head into the settings of that channel and click on the **Integrations** tab. Then, click on **Webhooks** and **New Webhook**. You can name this whatever you'd like (it will not be the final name). All you'll need is the webhook link. 
 Copy that, head over to [our Project site](https://site.plaguecraft.xyz/projects/medalclipwebhook/index.html) and paste it into the Webhook Link box, along with the rest of the information, and you're good to go!
 
-**Eventually** - I want this to have the ability to store Guild IDs in a database with their webhook links. However, atm, this is only a page that can trigger a webhook response. 
+**Eventually** - I want this to have the ability to store Guild IDs in a database with their webhook links. However, atm, this is only a page that can trigger a webhook response.
