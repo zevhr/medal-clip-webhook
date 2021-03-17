@@ -5,13 +5,17 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+  
+  <!-- This version will not be on the same level with the live one on my website, 
+since this one is written in HTML opposed to the live one written in PHP, which cannot be rendered unless you have a localhost server OR a test server. 
+It is in this repo, so feel free to use it, this one just has less elements & can run on a normal Windows PC. --> 
 
     <h2>Test the Medal.tv Clip Webhook - developed by Awex / Notch</h2>
   <div class="container">
-  <form method="POST" action="../scripts/webhook.php">
+  <form method="POST" action="../scripts/webhook.php"> <!-- Change this URL if it's in a different folder. ../ brings you to the folder up one level, ../../ = two etc etc -->
     <div><label>Discord Webhook URL</label></div>
     <div><input type="text" name="webhookURL" class="form-control" required /></div> 
-    <!-- Input box names should not be changed without the variable in the init script being changed as well, otherwise it will break the script. -->
+    <!-- Input box names should not be changed without the variable in the php script being changed as well, otherwise it will break the script. -->
     <div><label>Medal Username</label></div>
     <div><input type="text" name="medalUsername" class="form-control" /></div>
         <div><label>Clip Link</label></div>
