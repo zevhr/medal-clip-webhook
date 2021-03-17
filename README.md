@@ -15,9 +15,7 @@ Head into the settings of that channel and click on the **Integrations** tab.
 
 Then, click on **Webhooks** and **New Webhook**. You can name this whatever you'd like (it will not be the final name). 
 ![Discord Webhook Creation](https://github.com/awexxx/medal-clip-webhook/blob/main/images/create-webhook.png)
-<br>All you'll need is the webhook link. 
-![Discord Webhook Creation](https://github.com/awexxx/medal-clip-webhook/blob/main/images/copy-webhk-url.png)
-
+All you'll need is the webhook link. 
 Copy that, head over to [my Project site](https://site.plaguecraft.xyz/projects/medalclipwebhook/index.html) and paste it into the Webhook Link box, along with the rest of the information, and you're good to go!
 
 **Eventually** - I want this to have the ability to store Guild IDs in a database with their webhook links. However, atm, this is only a page that can trigger a webhook POST request.
