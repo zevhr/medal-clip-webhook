@@ -1,6 +1,10 @@
 # An extra Medal webhook for Server Owners
 This webhook (developed in PHP) will allow users to submit their clips to a server if the server owner adds the webhook to their server.
 This can be especially useful to server owners who just want a quick way to allow their users to share clips.
+
+# Want to self host this?
+Check out the [Wiki](https://github.com/awexxx/medal-clip-webhook/wiki) to learn how to self-host this! It's preferred you have a bit of knowledge, but feel free to reach out to me if you have any issues with the form!
+
 # A disclaimer..
 This is just a project I've made out of boredom. [MedalBot](https://medal.tv/medalbot) is obviously the better choice, however this webhook will be for server owners who just want a way for users to submit their clips, and nothing else (and/or if MedalBot doesn't work lmfao).
 --
