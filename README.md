@@ -11,9 +11,11 @@ A Simple Explanation: You can head on over to [my Project site](https://site.pla
 
 A more detailed explanation (for server owners): You'll need a Discord server (obviously), and a Discord channel you'd like all clips to go to.
 Head into the settings of that channel and click on the **Integrations** tab. 
+
 ![Discord Integrations](https://github.com/awexxx/medal-clip-webhook/blob/main/images/discord-integration-settings.png)
 
 Then, click on **Webhooks** and **New Webhook**. You can name this whatever you'd like (it will not be the final name). 
+
 ![Discord Webhook Creation](https://github.com/awexxx/medal-clip-webhook/blob/main/images/create-webhook.png)
 All you'll need is the webhook link. 
 Copy that, head over to [my Project site](https://site.plaguecraft.xyz/projects/medalclipwebhook/index.html) and paste it into the Webhook Link box, along with the rest of the information, and you're good to go!
