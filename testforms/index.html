@@ -3,6 +3,9 @@
 <head>
   <title>Medal.tv Clip Webhook Test</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
   
@@ -10,24 +13,386 @@
 since this one is written in HTML opposed to the live one written in PHP, which cannot be rendered unless you have a localhost server OR a test server. 
 It is in this repo, so feel free to use it, this one just has less elements & can run on a normal Windows PC. --> 
 
-    <h2>Test the Medal.tv Clip Webhook - developed by Awex / Notch</h2>
-  <div class="container">
+    <h2 style="color:white;">Test the Medal.tv Clip Webhook - developed by Awex / Notch</h2>
   <form method="POST" action="../scripts/webhook.php"> <!-- Change this URL if it's in a different folder. ../ brings you to the folder up one level, ../../ = two etc etc -->
-    <div><label>Discord Webhook URL</label></div>
-    <div><input type="text" name="webhookURL" class="form-control" required /></div> 
-    <!-- Input box names should not be changed without the variable in the php script being changed as well, otherwise it will break the script. -->
-    <div><label>Medal Username</label></div>
-    <div><input type="text" name="medalUsername" class="form-control" /></div>
-        <div><label>Clip Link</label></div>
-    <div><input type="text" name="clipLink" class="form-control" /></div><br>
 
-      <input type="submit" value="Send" class="btn btn-primary" />
+        <div class="panel">
+    <div class="state"><br><h1 style="padding-top:20px;">Medal.tv Clip Hook</h1></div>
+    <div class="form">
+      <input placeholder='Webhook URL' type="text" name="webhookURL">
+      <input placeholder='Medal Username' type="text" name="medalUsername">
+      <input placeholder='Caption' type="text" name="caption">
+      <input placeholder='Clip Link' type="text" name="clipLink">
+      <button class="login">Share!</button>
+    </div>
+    <div class="fack"><a href="https://github.com/awexxx/medal-clip-webhook" target="_blank"><i class="fa fa-code-fork" aria-hidden="true"></i>Fork this project!</a><span style="color:white;"> -- </span><a href="index-plaintext.html">Plain Text Webhook</a></div>
+  </div>
+</form>
 
-        <p><i>Note: This webhook is not directly affiliated with the Medal.tv team in any way. This was just a fun little project I picked up.</i></p>
-
-
-    <!-- <div><label>Message:</label></div>
-    <div><textarea cols="40" rows="5" name="myMessage" class="form-control"></textarea></div>
-    <div class="float-center mt-2"> -->
 </body>
 </html>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+  return $('.login').click(function(event) {
+    if (false) {
+
+    } else {
+      return $('.state').html('<br>').css({
+        color: '#eb5638'
+      });
+    }
+  });
+});
+</script>
+
+ <style>
+/*Universal*/
+
+#logo{
+  float:center;
+}
+
+hr{
+  width:100px;
+  border-color:black;
+
+}
+
+.center {
+  display:block;
+  margin:0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  width:20%;
+  padding-top:20px;
+}
+
+#center {
+  display:block;
+  margin:0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  width:30%;
+}
+
+body{
+  background-color:#e0e0e0;
+  text-align:center;
+  padding-top:150px;
+}
+
+  h1{
+    text-align:center;
+    color:#6b6b6b;
+  }
+
+  h2{
+    text-align:center;
+    color:#6b6b6b;
+  }
+
+  h3{
+    text-align:center;
+    color:#6b6b6b;
+  }
+
+  i{
+    font-size:20px;
+  }
+
+  body p{
+  text-align:center;
+  color:#6b6b6b;
+  font-size:20px;
+}
+
+a{
+  color:black;
+}
+
+a:hover{
+  color:white;
+}
+
+/*Home*/
+#welcome{
+  background-color:#474747;
+  padding-top:20px;
+  padding-bottom:15px;
+}
+
+#welcome h2{
+  color:#c2c2c2;
+}
+
+#welcome p{
+  color:#c2c2c2;
+}
+
+/*Socials Color Changing*/
+#medal a{
+  color:orange;
+  text-decoration:none;
+  font-size:28px;
+  padding-right:15px;
+  text-align:center;
+}
+
+#medal a:hover{
+  color:white;
+}
+
+#twitter a{
+  color:#467175;
+  text-decoration:none;
+  font-size:28px;
+  padding-right:15px;
+  padding-bottom:20px;
+  text-align:center;
+}
+
+#twitter a:hover{
+  color:white;
+}
+
+/*Navbar Attributes*/
+#navbar{
+  background-color:#e0e0e0;
+  color:#333;
+}
+
+#navbar ul{
+  padding:0px;
+  list-style:none;
+  text-align:center;
+}
+
+#navbar li{
+  display:inline;
+  text-align:center;
+}
+
+#navbar a{
+  color:#333;
+  text-decoration:none;
+  font-size:18px;
+  padding-right:15px;
+  text-align:center;
+}
+
+
+/*Footer Attributes*/
+.footer-p{
+  color:white;
+}
+.footer-basic {
+  padding:40px 0;
+  background-color:#bfbfbf;
+  color:#4b4c4d;
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+}
+
+.footer-basic li {
+  padding:0 10px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:black;
+  margin-bottom:0;
+}
+
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,900);
+* {
+  padding: 0;
+  margin: 0;
+}
+input {
+  outline: none;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background: -webkit-linear-gradient(45deg, rgba(4, 2, 96, 0.7), rgba(180, 49, 183, 0.9)), -webkit-linear-gradient(0deg, rgba(51, 136, 140, 0.3), rgba(87, 240, 240, 0.1));
+  background: -moz-linear-gradient(45deg, rgba(4, 2, 96, 0.7), rgba(180, 49, 183, 0.9)), -moz-linear-gradient(0deg, rgba(51, 136, 140, 0.3), rgba(87, 240, 240, 0.1));
+  background: -o-linear-gradient(45deg, rgba(4, 2, 96, 0.7), rgba(180, 49, 183, 0.9)), -o-linear-gradient(0deg, rgba(51, 136, 140, 0.3), rgba(87, 240, 240, 0.1));
+  background: linear-gradient(45deg, rgba(4, 2, 96, 0.7), rgba(180, 49, 183, 0.9)), linear-gradient(90deg, rgba(51, 136, 140, 0.3), rgba(87, 240, 240, 0.1));
+  overflow: hidden;
+}
+.panel {
+  width: 400px;
+  height: 500px;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px black;
+     -moz-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
+  background: #141519;
+  margin: 100px auto;
+  text-align: center;
+}
+.panel .state {
+  margin-top: 5px;
+  width: 100%;
+  height: 155px;
+  color: white;
+  font-size: 20px;
+}
+.panel .state i.fa-ban {
+  font-size: 40px;
+}
+.panel .state i.fa-unlock-alt {
+  font-size: 25px;
+  color: white;
+  line-height: 33px;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+  border: 2px solid;
+}
+.panel .state h2 {
+  font-weight: 400;
+}
+.panel .form {
+  width: 340px;
+  margin: 5px auto;
+}
+.panel .login {
+  height: 45px;
+  width: 100%;
+  -webkit-border-radius: 45px;
+     -moz-border-radius: 45px;
+          border-radius: 45px;
+  position: relative;
+  line-height: 45px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  margin-top: 10px;
+  -webkit-transition: background .2s;
+     -moz-transition: background .2s;
+       -o-transition: background .2s;
+          transition: background .2s;
+  cursor: pointer;
+}
+.panel .login:active {
+  -webkit-transform: translateY(2px);
+     -moz-transform: translateY(2px);
+      -ms-transform: translateY(2px);
+       -o-transform: translateY(2px);
+          transform: translateY(2px);
+}
+.panel .login:hover {
+
+}
+.panel .login:after {
+  content: "\f084";
+  font-family: 'FontAwesome';
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  color: #fff;
+  text-shadow: 1px -1px #467a23, 2px -2px #487d24, 3px -3px #4a8025, 4px -4px #4b8326, 5px -5px #4d8627, 6px -6px #4f8928, 7px -7px #508c28, 8px -8px #528f29, 9px -9px #54922a, 10px -10px #55952b, 11px -11px #57982c;
+  left: 0;
+  top: 0;
+  -webkit-transform: rotate(90deg);
+     -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+       -o-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+  text-align: center;
+  line-height: 45px;
+}
+.panel input[type='text'] {
+  background-color: #22232a;
+  -webkit-border-radius: 45px;
+     -moz-border-radius: 45px;
+          border-radius: 45px;
+  font-size: 15px;
+  height: 45px;
+  border: none;
+  padding-left: 15px;
+  width: -webkit-calc(100% - 15px);
+  width: -moz-calc(100% - 15px);
+  width: calc(100% - 15px);
+  margin-bottom: 10px;
+}
+.panel input[type='text'][placeholder] {
+  color: #656d79;
+  font-size: 15px;
+  font-weight: 500;
+}
+.panel .fack {
+  margin-top: 30px;
+  font-size: 14px;
+}
+.panel .fack i.fa {
+  text-decoration: none;
+  color: #fff;
+  vertical-align: middle;
+  font-size: 20px;
+  margin-right: 5px;
+}
+.panel .fack a:link {
+  color: #616973;
+}
+.panel .fack a:visited {
+  color: #555c65;
+}
+
+</style>

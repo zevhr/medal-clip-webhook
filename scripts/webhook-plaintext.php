@@ -1,9 +1,9 @@
 <?php
 
    $webhookURL = $_POST["webhookURL"];
+   $clipLink = $_POST["clipLink"];
+   $clipCaption = $_POST["caption"];
    $medalUsername  =  $_POST["medalUsername"];
-   $clipLink  =  $_POST["clipLink"];
-   $caption = $_POST["caption"];
 
 //Discord Webhook Message
 $webhookurl = "$webhookURL";
@@ -12,7 +12,9 @@ $timestamp = date("c", strtotime("now"));
 
 $json_data = json_encode([
     // Message
-    "content" => "",
+    "content" => "Woah! $medalUsername just submitted a clip! Check it out!
+:speech_left: $clipCaption
+$clipLink",
     
     // Username
     "username" => "Medal Clip Submission",
@@ -28,7 +30,7 @@ $json_data = json_encode([
     // "file" => "",
 
     // Embeds Array
-    "embeds" => [
+   /* "embeds" => [
         [
             // Embed Title
             "title" => "Woah! $medalUsername just submitted a clip!",
@@ -37,8 +39,7 @@ $json_data = json_encode([
             "type" => "rich",
 
             // Embed Description
-            "description" => "A user has submitted a clip with the caption: $caption! 
-            View it [here]($clipLink)!",
+            "description" => "A user has submitted a clip! View it [here]($clipLink)!",
 
             // URL of title link
             "url" => "",
@@ -73,7 +74,7 @@ $json_data = json_encode([
             // Additional Fields array
             "fields" => [
                 // Field 1
-               /* [
+                  [
                     "name" => "Medal Username",
                     "value" => "$medalUsername",
                     "inline" => true
@@ -83,12 +84,12 @@ $json_data = json_encode([
                     "name" => "Discord",
                     "value" => "$clipLink",
                     "inline" => true
-                ] */
+                ]
                 // Etc..
             ]
         ]
     ]
-
+*/
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
 
 

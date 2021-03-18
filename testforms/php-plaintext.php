@@ -22,7 +22,7 @@
       <input placeholder='Clip Link' type="text" name="clipLink">
       <button class="login">Share!</button>
     </div>
-    <div class="fack"><a href="https://github.com/awexxx/medal-clip-webhook" target="_blank"><i class="fa fa-code-fork" aria-hidden="true"></i>Fork this project!</a><span style="color:white;"> -- </span><a href="php-plaintext.php">Plain Text Webhook</a></div>
+    <div class="fack"><a href="https://github.com/awexxx/medal-clip-webhook" target="_blank"><i class="fa fa-code-fork" aria-hidden="true"></i>Fork this project!</a><span style="color:white;"> -- </span><a href="php-index.php">Embed Webhook</a></div>
   </div>
 </form>
 </body>
