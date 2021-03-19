@@ -29,67 +29,6 @@ $clipLink",
     // File upload
     // "file" => "",
 
-    // Embeds Array
-   /* "embeds" => [
-        [
-            // Embed Title
-            "title" => "Woah! $medalUsername just submitted a clip!",
-
-            // Embed Type
-            "type" => "rich",
-
-            // Embed Description
-            "description" => "A user has submitted a clip! View it [here]($clipLink)!",
-
-            // URL of title link
-            "url" => "",
-
-            // Timestamp of embed must be formatted as ISO8601
-            "timestamp" => $timestamp,
-
-            // Embed left border color in HEX
-            "color" => hexdec( "3366ff" ),
-
-            // Footer
-            "footer" => [
-                "text" => "Medal.tv Clip Webhook",
-            ],
-
-            // Image to send
-            //"image" => [
-              //  "url" => "https://storage.plaguecraft.xyz/web-assets/logos/pc-logo.png"
-            //],
-
-            // Thumbnail
-            "thumbnail" => [
-                "url" => "https://media.pocketgamer.biz/2019/10/100695/medal-logo-r225x.png"
-            ],
-
-            // Author
-            "author" => [
-                "name" => "Medal.tv Clip Webhook",
-                "url" => "https://github.com/awexxx/medal-clip-webhook"
-            ],
-
-            // Additional Fields array
-            "fields" => [
-                // Field 1
-                  [
-                    "name" => "Medal Username",
-                    "value" => "$medalUsername",
-                    "inline" => true
-                ],
-                // Field 2
-                [
-                    "name" => "Discord",
-                    "value" => "$clipLink",
-                    "inline" => true
-                ]
-                // Etc..
-            ]
-        ]
-    ]
-*/
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
 
 
