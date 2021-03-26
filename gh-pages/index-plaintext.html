@@ -1,7 +1,3 @@
-<?php
-//This will soon contain possible MYSQL statements to store guild id's in a database to link their servers (hopefully)
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +5,13 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+  
+  <!-- This version will not be on the same level with the live one on my website, 
+since this one is written in HTML opposed to the live one written in PHP, which cannot be rendered unless you have a localhost server OR a test server. 
+It is in this repo, so feel free to use it, this one just has less elements & can run on a normal Windows PC. --> 
 
     <h2 style="color:white;">Test the Medal.tv Clip Webhook - developed by Awex / Notch</h2>
-  <form method="POST" action="../scripts/webhook-plaintext.php"> <!-- Change this URL if it's in a different folder. ../ brings you to the folder up one level, ../../ = two etc etc -->
+  <form method="POST" action="https://api.plaguecraft.xyz/medalclipwebhook/php/webhook-plaintext.php"> <!-- Change this URL if it's in a different folder. ../ brings you to the folder up one level, ../../ = two etc etc -->
 
         <div class="panel">
     <div class="state"><br><h1 style="padding-top:20px;">Medal.tv Clip Hook</h1></div>
@@ -22,9 +22,10 @@
       <input placeholder='Clip Link' type="text" name="clipLink">
       <button class="login">Share!</button>
     </div>
-    <div class="fack"><a href="https://github.com/awexxx/medal-clip-webhook" target="_blank"><i class="fa fa-code-fork" aria-hidden="true"></i>Fork this project!</a><span style="color:white;"> -- </span><a href="php-index.php">Embed Webhook</a></div>
+    <div class="fack"><a href="https://github.com/awexxx/medal-clip-webhook" target="_blank"><i class="fa fa-code-fork" aria-hidden="true"></i>Fork this project!</a><span style="color:white;"> -- </span><a href="index.html">Embed Webhook</a></div>
   </div>
 </form>
+
 </body>
 </html>
 
