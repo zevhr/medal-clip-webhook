@@ -1,35 +1,67 @@
+<?php
+
+$link = $_GET['clip'];
+$url = $_GET["url"];
+$clipCaption = $_GET["caption"];
+$medalUsername  =  $_GET["user"];
+
+//Discord Webhook Message
+$webhookurl = "$url";
+
+$timestamp = date("c", strtotime("now"));
+
+$json_data = json_encode([
+    // Message
+    "content" => "Woah! $medalUsername just submitted a clip! Check it out!
+:speech_left: $clipCaption
+https://$link",
+    
+    // Username
+    "username" => "Medal Clip Submission",
+
+    // Avatar URL.
+    // Uncoment to replace image set in webhook
+    "avatar_url" => "https://media.pocketgamer.biz/2019/10/100695/medal-logo-r225x.png",
+
+    // Text-to-speech
+    "tts" => false,
+
+    // File upload
+    // "file" => "",
+
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
+
+
+$ch = curl_init( $webhookurl );
+curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
+curl_setopt( $ch, CURLOPT_POST, 1);
+curl_setopt( $ch, CURLOPT_POSTFIELDS, $json_data);
+curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
+curl_setopt( $ch, CURLOPT_HEADER, 0);
+curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
+
+$response = curl_exec( $ch );
+// If you need to debug, or find out why you can't send messages, uncomment the line below, and execute tge script.
+// echo $response;
+curl_close( $ch );
+@hungaryck
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>Medal.tv Clip Webhook Test</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  
-  <!-- This version will not be on the same level with the live one on my website, 
-since this one is written in HTML opposed to the live one written in PHP, which cannot be rendered unless you have a localhost server OR a test server. 
-It is in this repo, so feel free to use it, this one just has less elements & can run on a normal Windows PC. --> 
 
-    <h2 style="color:white;">Test the Medal.tv Clip Webhook - developed by Awex / Notch</h2>
-  <form method="POST" action="../scripts/webhook.php"> <!-- Change this URL if it's in a different folder. ../ brings you to the folder up one level, ../../ = two etc etc -->
-
-        <div class="panel">
-    <div class="state"><br><h1 style="padding-top:20px;">Medal.tv Clip Hook</h1></div>
-    <div class="form">
-      <input placeholder='Webhook URL' type="text" name="webhookURL">
-      <input placeholder='Medal Username' type="text" name="medalUsername">
-      <input placeholder='Caption' type="text" name="caption">
-      <input placeholder='Clip Link' type="text" name="clipLink">
-      <button class="login">Share!</button>
-    </div>
-    <div class="fack"><a href="https://github.com/awexxx/medal-clip-webhook" target="_blank"><i class="fa fa-code-fork" aria-hidden="true"></i>Fork this project!</a><span style="color:white;"> -- </span><a href="index.html">Embed Webhook</a></div>
-  </div>
-</form>
-
+<h2>Your clip test has been sent!</h2>
+  <p>Check your server where you had the webhook created!<br>
+    <a href="#" onclick="history.back()">Back</a></p>
+    <p><a href="<?php echo $link ?>">View the clip you shared here!</a></p>
 </body>
 </html>
 
- <style>
+  <style>
 /*Universal*/
 
 #logo{
@@ -229,3 +261,4 @@ a:hover{
   margin-bottom:0;
 }
 </style>
+

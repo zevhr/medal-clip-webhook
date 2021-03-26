@@ -1,20 +1,18 @@
 <?php
 
-   $webhookURL = $_POST["webhookURL"];
-   $clipLink = $_POST["clipLink"];
-   $clipCaption = $_POST["caption"];
-   $medalUsername  =  $_POST["medalUsername"];
+$link = $_GET['clip'];
+$url = $_GET["url"];
+$clipCaption = $_GET["caption"];
+$medalUsername  =  $_GET["user"];
 
 //Discord Webhook Message
-$webhookurl = "$webhookURL";
+$webhookurl = "$url";
 
 $timestamp = date("c", strtotime("now"));
 
 $json_data = json_encode([
     // Message
-    "content" => "Woah! $medalUsername just submitted a clip! Check it out!
-:speech_left: $clipCaption
-$clipLink",
+    "content" => "",
     
     // Username
     "username" => "Medal Clip Submission",
@@ -29,6 +27,68 @@ $clipLink",
     // File upload
     // "file" => "",
 
+    // Embeds Array
+    "embeds" => [
+        [
+            // Embed Title
+            "title" => "Woah! $medalUsername just submitted a clip!",
+
+            // Embed Type
+            "type" => "rich",
+
+            // Embed Description
+            "description" => "A user has submitted a clip with the caption: $clipCaption! 
+            View it [here]($link)!",
+
+            // URL of title link
+            "url" => "",
+
+            // Timestamp of embed must be formatted as ISO8601
+            "timestamp" => $timestamp,
+
+            // Embed left border color in HEX
+            "color" => hexdec( "3366ff" ),
+
+            // Footer
+            "footer" => [
+                "text" => "Medal.tv Clip Webhook",
+            ],
+
+            // Image to send
+            //"image" => [
+              //  "url" => "https://storage.plaguecraft.xyz/web-assets/logos/pc-logo.png"
+            //],
+
+            // Thumbnail
+            "thumbnail" => [
+                "url" => "https://media.pocketgamer.biz/2019/10/100695/medal-logo-r225x.png"
+            ],
+
+            // Author
+            "author" => [
+                "name" => "Medal.tv Clip Webhook",
+                "url" => "https://github.com/awexxx/medal-clip-webhook"
+            ],
+
+            // Additional Fields array
+            "fields" => [
+                // Field 1
+               /* [
+                    "name" => "Medal Username",
+                    "value" => "$medalUsername",
+                    "inline" => true
+                ],
+                // Field 2
+                [
+                    "name" => "Discord",
+                    "value" => "$clipLink",
+                    "inline" => true
+                ] */
+                // Etc..
+            ]
+        ]
+    ]
+
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
 
 
@@ -41,7 +101,7 @@ curl_setopt( $ch, CURLOPT_HEADER, 0);
 curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
 
 $response = curl_exec( $ch );
-// If you need to debug, or find out why you can't send messages, uncomment the line below, and execute tge script.
+// If you need to debug, or find out why you can't send message uncomment line below, and execute script.
 // echo $response;
 curl_close( $ch );
 @hungaryck
@@ -58,7 +118,7 @@ curl_close( $ch );
 <h2>Your clip test has been sent!</h2>
   <p>Check your server where you had the webhook created!<br>
     <a href="#" onclick="history.back()">Back</a></p>
-    <p><a href="<?php echo $clipLink ?>">View the clip you shared here!</a></p>
+    <p><a href="<?php echo $link ?>">View the clip you shared here!</a></p>
 </body>
 </html>
 
@@ -262,3 +322,4 @@ a:hover{
   margin-bottom:0;
 }
 </style>
+
