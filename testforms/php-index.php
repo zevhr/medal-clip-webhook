@@ -1,5 +1,5 @@
 <?php
-//This will soon contain possible MYSQL statements to store guild id's in a database to link their servers (hopefully)
+include 'style.css';
 ?>
 
 <!DOCTYPE html>
@@ -7,6 +7,7 @@
 <head>
   <title>Medal.tv Clip Webhook Test</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -28,7 +29,7 @@
 </body>
 </html>
 
- <style>
+ <!--<style>
 /*Universal*/
 
 #logo{
