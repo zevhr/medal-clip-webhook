@@ -45,8 +45,8 @@ However, this webhook does not have some things that Medal has, like auto-upload
 				<hr>
 				<h2 align="center">how to do the thing tho</h2>
 					<p align="center">Well, you can do it <i>really</i> easily!<br>
-						Navigate over to this <a href="https://awexxx.github.io/medal-clip-webhook/gh-pages">project site</a> and put in your information. <i>Do note none of this information is saved to a database at this moment, so all it's doing is passing your URL to Discord). <br></i><strong>Regarding the querying method..</strong> Querying will <strong>not</strong> be available on this domain as GitHub Pages only serves static content (all php is running from https://api.plaguecraft.xyz/medalclipwebhook/php).<br>
-					In order to test querying or even use it, you'll have to use the following url: https://api.plaguecraft.xyz/medalclipwebhook/php/query (or query-plaintext).php followed by your query params.</p>
+						Navigate over to this <a href="https://awexxx.github.io/medal-clip-webhook/gh-pages">project site</a> and put in your information. <i>Do note none of this information is saved to a database at this moment, so all it's doing is passing your URL to Discord). <br></i><strong>Regarding the querying method..</strong> Querying will <strong>not</strong> be available on this domain as GitHub Pages only serves static content (all php is running from https://git.plaguecraft.xyz/medalclipwebhook/).<br>
+					In order to test querying or even use it, you'll have to use the following url: https://git.plaguecraft.xyz/medalclipwebhook/embed/query (or /pt/query-plaintext).php followed by your query params.</p>
 				<hr>
 			<h2 align="center">Got Questions?</h2>
 				<p align="center">I might have an answer! Feel free to open an issue up if you have any inquiries about this script :)</p>
