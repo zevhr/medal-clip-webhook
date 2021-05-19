@@ -1,55 +1,3 @@
-<?php
-
-$link = $_GET['clip'];
-$url = $_GET["url"];
-$clipCaption = $_GET["caption"];
-$medalUsername  =  $_GET["user"];
-
-//Discord Webhook Message
-$webhookurl = "$url";
-
-$timestamp = date("c", strtotime("now"));
-
-$json_data = json_encode([
-    // Message
-    "content" => "Woah! $medalUsername just submitted a clip! Check it out!
-:speech_left: $clipCaption
-https://$link",
-    
-    // Username
-    "username" => "Medal Clip Submission",
-
-    // Avatar URL.
-    // Uncoment to replace image set in webhook
-    "avatar_url" => "https://media.pocketgamer.biz/2019/10/100695/medal-logo-r225x.png",
-
-    // Text-to-speech
-    "tts" => false,
-
-    // File upload
-    // "file" => "",
-
-], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
-
-
-$ch = curl_init( $webhookurl );
-curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
-curl_setopt( $ch, CURLOPT_POST, 1);
-curl_setopt( $ch, CURLOPT_POSTFIELDS, $json_data);
-curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
-curl_setopt( $ch, CURLOPT_HEADER, 0);
-curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
-
-$response = curl_exec( $ch );
-// If you need to debug, or find out why you can't send messages, uncomment the line below, and execute tge script.
-// echo $response;
-curl_close( $ch );
-@hungaryck
-?>
-
-<style>
-<?php include '../assets/css/main.css' ?>
-</style>
 <!DOCTYPE html>
 <html>
 <head>
@@ -85,7 +33,7 @@ curl_close( $ch );
       <div class="wrap-login100" style="text-align:center;">
         <h2>You did it!</h2>
         <br /><p style="color:black; font-size:20px;">You shared a clip to a server! Poggers!<br />
-        Check the server for <a style="color:white;" href="<?php echo $clipLink ?>">the clip you shared ;)</a></p>
+        Check the server for the clip you shared ;)</p>
         <p><a style="color:white; font-size:20px;" href="#" onclick="history.back()">Head Back</a></p>
 
         <hr>
@@ -112,4 +60,3 @@ curl_close( $ch );
     border-color:white;
   }
 </style>
-
