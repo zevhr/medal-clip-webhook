@@ -13,16 +13,14 @@ app.use(cors());
 ///////////////////
 //   ENDPOINTS   //
 ///////////////////
-// No-path endpoint
+
+// No-path (/) endpoint, Embed HTML Endpoint
+
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/index.html'));
+    res.send(JSON.stringify({"message": "Welcome! If you're new here, check out awexxx.xyz/mcw for info on how to use this API."}))
 });
 
-app.get('/pt', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/index-plaintext.html'));
-});
-
-app.get('/clip-check', (req, res) => {
+app.get('/clip-check', (req, res) => { // Embed backend (sends the embed)
     const cliplink = req.query.clipLink;
     const user = req.query.medalUsername;
     const webhook = req.query.webhookURL;
@@ -33,7 +31,7 @@ app.get('/clip-check', (req, res) => {
         Hook.setAvatar('https://media.pocketgamer.biz/2019/10/100695/medal-logo-r225x.png')
         
         const embed = new MessageBuilder()
-        .setTitle(`Unofficial Medal Clip Webhook`)
+        .setTitle(`[UNOFFICIAL!] Medal Clip Webhook`)
         .setAuthor('Awex', 'https://avatars.githubusercontent.com/u/68027680?v=4')
         .setURL(`${cliplink}`)
         .setColor('#c49300')
@@ -44,32 +42,31 @@ app.get('/clip-check', (req, res) => {
         Hook.send(embed)
         Hook.send(cliplink)
 
-        return res.sendFile(path.join(__dirname, '/public/success.html'));
+        res.send(JSON.stringify({"success": "yay!", "message": "Successfully sent your clip :)"}))
 
-    } else if (!cliplink || error || UnhandledPromiseRejectionWarning) {
-        return res.sendFile(path.join(__dirname, '/public/fail.html'));
+    } else if (!cliplink || !user || !webhook || !caption ||  error || UnhandledPromiseRejectionWarning) {
+        res.send(JSON.stringify({"error": "POST FAILED", "message": "Hey sailor! Sadly, your POST failed. Please double check you have all the fields!"}))
     }
 });
 
-app.get('/clip-check-pt', (req, res) => {
+app.get('/clip-check-pt', (req, res) => { // Plain-Text Checkpoint - Sends the plaintext vers message
     const cliplink = req.query.clipLink;
     const user = req.query.medalUsername;
     const webhook = req.query.webhookURL;
     const caption = req.query.caption;
     if(cliplink) {
         const Hook = new Webhook(`${webhook}`)
-        Hook.setUsername('Medal Clip Webhook')
+        Hook.setUsername('[UNOFFICIAL] Medal Clip Webhook')
         Hook.setAvatar('https://media.pocketgamer.biz/2019/10/100695/medal-logo-r225x.png')
 
         Hook.send(`${user} just sent a clip! Check it out; ${cliplink}\n> ${caption}`)
 
-        res.sendFile(path.join(__dirname, '/public/success.html'));
+        res.send(JSON.stringify({"success": "yay!", "message": "Successfully sent your clip :)"}))
 
     } else if (!cliplink || !user || !webhook || !caption) {
-        res.sendFile(path.join(__dirname, '/public/fail.html'));
+        res.send(JSON.stringify({"error": "POST FAILED", "message": "Hey sailor! Sadly, your POST failed. Please double check you have all the fields!"}))
     }
 });
-
 
             /////////////////////////
             //  HTTP SERVER START  //

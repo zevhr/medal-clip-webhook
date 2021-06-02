@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Medal.tv Clip Webhook Test</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medal.tv Clip Webhook Test</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->  
 <link rel="icon" type="image/png" href="https://awexxx.github.io/medal-clip-webhook/assets/images/icons/favicon.ico"/>
 <!--===============================================================================================-->
@@ -28,53 +28,53 @@
 <!--===============================================================================================-->
 </head>
 <body>
-	
-	<div class="limiter">
-		<div class="container-login100" style="background-image: url('https://awexxx.github.io/medal-clip-webhook/assets/images/bg-01.jpg');">
-			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="https://mcw.plaguecraft.xyz/clip-check">
-					<span class="login100-form-logo">
-						<i class="zmdi zmdi-fullscreen"></i>
-					</span>
+  
+  <div class="limiter">
+    <div class="container-login100" style="background-image: url('https://awexxx.github.io/medal-clip-webhook/assets/images/bg-01.jpg');">
+      <div class="wrap-login100">
+        <form onsubmit="return false" class="login100-form validate-form"">
+          <span class="login100-form-logo">
+            <i class="zmdi zmdi-fullscreen"></i>
+          </span>
 
-					<span class="login100-form-title p-b-34 p-t-27">
-						Medal.tv Clip Webhook<br>
-						Embed
-					</span>
+          <span class="login100-form-title p-b-34 p-t-27">
+            Medal.tv Clip Webhook<br>
+            Plaintext - <a href="/">Go to Embed</a>
+          </span>
 
-					<div class="wrap-input100 validate-input">
-						<input class="input100" type="url" name="webhookURL" placeholder="Discord/Guilded API URL">
-						<span class="focus-input100" data-placeholder="&#xf191;"></span>
-					</div>
+          <div class="wrap-input100 validate-input">
+            <input class="input100" type="url" name="webhookURL" id="webhookURL" placeholder="Discord/Guilded API URL">
+            <span class="focus-input100" data-placeholder="&#xf191;"></span>
+          </div>
 
-					<div class="wrap-input100 validate-input">
-						<input class="input100" type="url" name="clipLink" placeholder="Clip Link">
-						<span class="focus-input100" data-placeholder="&#xf18e;"></span>
-					</div>
-					<div class="wrap-input100 validate-input">
-						<input class="input100" type="text" name="medalUsername" placeholder="Medal Username">
-						<span class="focus-input100" data-placeholder="&#xf207;"></span>
-					</div>
-					<div class="wrap-input100 validate-input">
-						<input class="input100" type="text" name="caption" placeholder="Caption">
-						<span class="focus-input100" data-placeholder="&#xf150;"></span>
-					</div>
+          <div class="wrap-input100 validate-input">
+            <input class="input100" type="url" name="clipLink" id="cliplink" placeholder="Clip Link">
+            <span class="focus-input100" data-placeholder="&#xf18e;"></span>
+          </div>
+          <div class="wrap-input100 validate-input">
+            <input class="input100" type="text" name="medalUsername" id="medalUsername" placeholder="Medal Username">
+            <span class="focus-input100" data-placeholder="&#xf207;"></span>
+          </div>
+          <div class="wrap-input100 validate-input">
+            <input class="input100" type="text" name="caption" id="caption" placeholder="Caption">
+            <span class="focus-input100" data-placeholder="&#xf150;"></span>
+          </div>
 
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							<i class="zmdi zmdi-mail-send"></i>Submit
-						</button>
-					</div>
+          <div class="container-login100-form-btn">
+            <button class="login100-form-btn" onclick="postPlain()">
+              <i class="zmdi zmdi-mail-send"></i>Submit
+            </button>
+          </div>
 
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
 
-	<div id="dropDownSelect1"></div>
-	
+  <div id="dropDownSelect1"></div>
+  
 <!--===============================================================================================-->
   <script src="https://awexxx.github.io/medal-clip-webhook/assets/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
@@ -92,6 +92,7 @@
 <!--===============================================================================================-->
   <script src="https://awexxx.github.io/medal-clip-webhook/assets/js/main.js"></script>
   <script src="https://awexxx.github.io/medal-clip-webhook/assets/js/slideshow.js"></script>
+  <script src="javascript/pt.js"></script>
 
 </body>
 </html>
