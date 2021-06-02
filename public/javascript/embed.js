@@ -12,5 +12,5 @@ async function postEmbed() {
 
     const { response } = await fetch(`http://localhost/clip-check?clipLink=${link}&webhookURL=${webhook}&medalUsername=${username}&caption=${caption}`).then(response => response.json());
 
-    window.location.replace("public/success.html");
+    window.location.replace("https://awexxx.xyz/mcw?status=success");
 }
