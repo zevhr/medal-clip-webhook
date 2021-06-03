@@ -23,7 +23,7 @@ However, this webhook does not have some things that Medal has, like auto-upload
 <hr>
 
 <h2 align="center">A key point..</h2>
-	<p align="center"><strong>First point</strong>: If you'd like to self host this, it is expected you have at least <i>some</i> experience with Javascript and API fetching, however I'm happy to help and answer any questions you may have regarding setting this up! You should check out the <a href="https://github.com/awexxx/medal-clip-webhook/wiki">wiki</a> for more info on self-hosting this script.</p>
+	<p align="center"><strong>First point</strong>: If you'd like to self host this, it is expected you have at least <i>some</i> experience with Javascript and API fetching (Node or vanilla frontend JS, can always use the prebuilt API 😛) , however I'm happy to help and answer any questions you may have regarding setting this up! You should check out the <a href="https://github.com/awexxx/medal-clip-webhook/wiki">wiki</a> for more info on self-hosting this script.</p>
 				<hr>
 				<h2 align="center">how to do the thing tho</h2>
 					<p align="center">Well, you can do it <i>really</i> easily!<br>
