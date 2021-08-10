@@ -12,12 +12,12 @@ async function postEmbed() {
         "clipLink": `${link}`,
         "webhook": `${webhook}`,
         "caption": `${caption}`,
-        "username": `${medalUsername}`
+        "medalUsername": `${username}`
     }
 
     console.log(data)
 
-    const data = await fetch(`https://api.awexxx.xyz/tools/mcw/clip`, {
+    const resp = await fetch(`https://api.awexxx.xyz/tools/mcw/clip`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
