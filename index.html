@@ -1,97 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Medal.tv Clip Webhook</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="javascript/embed.js"></script>
-<!--===============================================================================================-->  
-<link rel="icon" type="image/png" href="https://mcw.awexxx.xyz/assets/images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="https://mcw.awexxx.xyz/assets/vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="https://mcw.awexxx.xyz/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="https://mcw.awexxx.xyz/assets/fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="https://mcw.awexxx.xyz/assets/vendor/animate/animate.css">
-<!--===============================================================================================-->  
-  <link rel="stylesheet" type="text/css" href="https://mcw.awexxx.xyz/assets/vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="https://mcw.awexxx.xyz/assets/vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="https://mcw.awexxx.xyz/assets/vendor/select2/select2.min.css">
-<!--===============================================================================================-->  
-  <link rel="stylesheet" type="text/css" href="https://mcw.awexxx.xyz/assets/vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="https://mcw.awexxx.xyz/assets/css/util.css">
-  <link rel="stylesheet" type="text/css" href="https://mcw.awexxx.xyz/assets/css/main.css">
-<!--===============================================================================================-->
-</head>
-<body>
-	
-	<div class="limiter">
-		<div class="container-login100" style="background-image: url('https://mcw.awexxx.xyz/assets/images/bg-01.jpg');">
-			<div class="wrap-login100">
-				<form onsubmit="return false" class="login100-form validate-form">
-					<span class="login100-form-logo">
-						<i class="zmdi zmdi-fullscreen"></i>
-					</span>
+<html>
+	<head>
+		<title>Medal Clip Webhook by Awex</title>
+		<!-- Stylesheet linking -->
+		<link rel="stylesheet" href="assets/css/main.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@200&display=swap" rel="stylesheet">
+	</head>
+	<body>
 
-					<span class="login100-form-title p-b-34 p-t-27">
-						Medal.tv Clip Webhook
-					</span>
+			<!-- Start of page -->
+				<h3 style="padding-top:30px;">Medal Clip Webhook - by Awex</h3>
+					<h4>Short Summary</h4>
+						<p>The Medal Clip Webhook allows users/server owners (who can't access tools like MedalBot) to send clips to their Discord servers.<br>
 
-					<div class="wrap-input100 validate-input">
-						<input class="input100" type="url" name="webhookURL" id="webhookURL" placeholder="Discord">
-						<span class="focus-input100" data-placeholder="&#xf191;"></span>
-					</div>
+							<a href="help.html">Help</a> --- <a href="oldclip.html">Access old clips</a><br><br>
 
-					<div class="wrap-input100 validate-input">
-						<input class="input100" type="url" id="cliplink" name="clipLink" placeholder="Clip Link">
-						<span class="focus-input100" data-placeholder="&#xf18e;"></span>
-					</div>
-					<div class="wrap-input100 validate-input">
-						<input class="input100" type="text" name="medalUsername" id="medalUsername" placeholder="Medal Username">
-						<span class="focus-input100" data-placeholder="&#xf207;"></span>
-					</div>
-					<div class="wrap-input100 validate-input">
-						<input class="input100" type="text" name="caption" id="caption" placeholder="Caption">
-						<span class="focus-input100" data-placeholder="&#xf150;"></span>
-					</div>
+							<h2>Embed Example</h2>
 
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" onclick="postEmbed()">
-							<i class="zmdi zmdi-mail-send"></i>Submit
-						</button>
-					</div>
+							<img alt="Example" src="assets/img/example.png"><br><br>
+							<strong>NOTE:</strong> None of this information is stored. The code for this site & the site its self is <a href="https://github.com/awexxx/medal-clip-webhook" target="_blank">hosted on Github</a><br>.
+						<strong>To begin,</strong> input the info required below in the input box. It's as easy as that.</p>
 
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	
+						<input id="username" type="text" placeholder="Medal Username.."><br>
+						<input id="caption" type="text" placeholder="Caption.."><br>
+						<input id="cliplink" type="text" placeholder="Clip Link.."><br>
+						<input id="discordurl" type="text" placeholder="Discord Webhook URL.."><br>
+							<button type="submit" onclick="sendClip()">Submit</button>
 
-	<div id="dropDownSelect1"></div>
-	
-<!--===============================================================================================-->
-  <script src="https://mcw.awexxx.xyz/assets/vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-  <script src="https://mcw.awexxx.xyz/assets/vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-  <script src="https://mcw.awexxx.xyz/assets/vendor/bootstrap/js/popper.js"></script>
-  <script src="https://mcw.awexxx.xyz/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-  <script src="https://mcw.awexxx.xyz/assets/vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-  <script src="https://mcw.awexxx.xyz/assets/vendor/daterangepicker/moment.min.js"></script>
-  <script src="https://mcw.awexxx.xyz/assets/vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-  <script src="https://mcw.awexxx.xyz/assets/vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-  <script src="https://mcw.awexxx.xyz/assets/js/main.js"></script>
-  <script src="https://mcw.awexxx.xyz/assets/js/slideshow.js"></script>
+							<div id="noti" style="padding-bottom:30px;"></div>
+ 
 
-</body>
-</html>
+		<script src="assets/js/clip.js"></script>
+	</body>
+</html> 

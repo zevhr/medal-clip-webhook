@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Medal Clip Webhook by Awex -- Old Clip Finder</title>
+        <!-- Stylesheet linking -->
+		<link rel="stylesheet" href="assets/css/main.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@200&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <h3 style="padding-top:30px;">Medal Clip Webhook - by Awex</h3>
+            <h4>Old Clip Finder</h4>
+                <p>Easily find your oldest clip in a game, or find a more specific one with offset.</p>
+
+            <input id="username" type="text" placeholder="Medal ID.. (NOT USERNAME)"><br>
+            <input id="categoryid" type="text" placeholder="Category ID.. (see help)"><br>
+            <input id="offset" type="text" placeholder="Offset.. (max: 1000)"><br>
+                <button type="button" onclick="findClip()">Submit</button>
+
+                <div id="noti" style="padding-bottom:30px;"></div>
+
+        <script src="assets/js/oldclip.js"></script>
+    </body>
+</html>
