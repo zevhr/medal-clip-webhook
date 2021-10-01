@@ -18,7 +18,18 @@
             <input id="offset" type="text" placeholder="Offset.. (max: 1000)"><br>
                 <button type="button" onclick="findClip()">Submit</button>
 
-                <div id="noti" style="padding-bottom:30px;"></div>
+                <div id="noti" style="padding-bottom:30px;">
+                    <p id="title"></p>
+                    <p id="url"></p>
+                </div>
+
+                    <hr style="width:50%">
+                        <p id="share"><a href="#" onclick="showForm()">Share?</a></p>
+                            <div id="share-form" style="display:none;">
+                            <input id="webhook" type="text" placeholder="Discord Webhook URL"><br>
+                            <button type="button" onclick="shareClip()">Share!</button>
+                            <div id="share-noti"></div>
+                            </div>
 
         <script src="assets/js/oldclip.js"></script>
     </body>
