@@ -4,7 +4,7 @@ async function findClip() {
     var medalid = document.getElementById(`username`).value;
 
     if(offset === '' || cid === '' || medalid === '') {
-        return document.getElementById(`noti`).innerHTML = `<p>No value was provided for one of the fields.</p>`
+        document.getElementById(`noti`).innerHTML = `<p>No value was provided for one of the fields.</p>`
     }
 
     var url = `https://developers.medal.tv/v1/latest?userId=${medalid}&categoryId=${cid}&limit=1&offset=${offset}`
@@ -22,8 +22,8 @@ async function findClip() {
     catch(error) {
         if(error.name === 'SyntaxError') {
             document.getElementById(`noti`).innerHTML = `<p>No clip is at offset of ${offset}. Make it shorter!</p>`
-        } else {
-            document.getElementById(`noti`).innerHTML = `<p>Something went wrong trying to get your clip.</p>`
+        } else if (error.message.includes('Cannot read properties')) {
+            document.getElementById(`noti`).innerHTML = `<p>A clip at offset ${offset} in category ${cid} doesn't exist!</p>`
         }
     }
 }
