@@ -34,10 +34,12 @@ function showForm() {
 }
 
 async function shareClip() {
-    var discordurl = document.getElementById(`webhook`).value;
+    var discordUrl = document.getElementById(`webhook`).value;
+    
+    let validWebhook = /(https?):\/\/((?:ptb\.|canary\.)?discord(?:app)?\.com)\/api(?:\/)?(v\d{1,2})?\/webhooks\/(\d{17,19})\/([\w\-]{68})/
 
-    if (!discordurl.toLowerCase().startsWith(`https://discord.com/api/webhooks`)) {
-        document.getElementById(`share-noti`).innerHTML = `<p>An incorrect URL for either Discord Webhook URL or the Clip Link was provided.</p>`
+    if (!validWebhook.test(discordUrl)) {
+        document.getElementById(`share-noti`).innerHTML = `<p>An incorrect Discord Webhook URL or Clip Link was provided.</p>`
     } else {
         var timestamp = Math.round(data.contentObjects[0].createdTimestamp / 1000)
 
