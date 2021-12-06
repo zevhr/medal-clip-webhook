@@ -16,14 +16,12 @@ async function sendClip() {
             method: 'GET',
             headers: { 'Authorization': "pub_HTIQnwR16xnrkTeaDEkNhZRbgYcfjS8m" }
         }).then(response => response.json())
-        
-        console.log(medal.contentObjects[0])
 
         var timestamp = Math.round(medal.contentObjects[0].createdTimestamp / 1000)
 
         const embedData = {
             "username": "Medal Clip Webhook",
-            "avatar_url": "https://cdn.medal.tv/assets/img/new-medal-logo.png",
+            "avatar_url": "https://miro.medium.com/fit/c/1360/1360/1*7qBUic4ynNz5XtnTe4IWAw.png",
             "content": `**${username.value}** just submitted a clip via the Medal Clip Webhook!`,
             "embeds": [
                 {
