@@ -106,18 +106,9 @@ async function findClip() {
         errorDiv.innerHTML = `<p>You cannot use an offset greater than 1000.</p>`
     }
 
-    // Find category in data by slug
-    var data = await fetch(`https://developers.medal.tv/v1/categories`, {
-        headers: { "Content-Type": "application/json", "authorization": apiKey}
-    }).then(response => response.json());
-
-    var index = data.findIndex(x => x.slug === cid.toLowerCase());
-    if (index !== -1) categoryData = data[index]
-    else errorDiv.innerHTML = `<p>Game <strong>${cid}</strong> does not exist in Medal's database.</p>`
-
     // Find-the-clip logic 
     try {
-        clipData = await fetch(`https://developers.medal.tv/v1/latest?userId=${medalid}&categoryId=${this.categoryData.categoryId}&limit=1&offset=${offset}`, {
+        clipData = await fetch(`https://developers.medal.tv/v1/latest?userId=${medalid}&categoryId=${cid}`, {
             headers: { "Content-Type": "application/json", "authorization": apiKey }
         }).then(response => response.json())
 
